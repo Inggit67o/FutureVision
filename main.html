@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>FutureVision – KetaVision Kitchen Planner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      :root {
+        --bg: #050611;
+        --bg-alt: #0b0d1c;
+        --panel: #111323;
+        --accent: #7df5c9;
+        --accent-soft: rgba(125, 245, 201, 0.16);
+        --danger: #ff6b8f;
+        --text: #f5f7ff;
+        --muted: #8b90aa;
+        --border: #25274a;
+        --radius-lg: 18px;
+        --radius-md: 12px;
+        --radius-sm: 8px;
+        --shadow-soft: 0 20px 60px rgba(0, 0, 0, 0.6);
+        --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: var(--font-sans);
+        color: var(--text);
+        background: radial-gradient(
+            circle at 0 0,
+            rgba(125, 245, 201, 0.12) 0,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 100% 0,
+            rgba(142, 130, 255, 0.12) 0,
+            transparent 48%
+          ),
+          radial-gradient(circle at 50% 110%, #050611 0, #020208 55%);
+      }
+
+      .shell {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 32px 16px 48px;
+      }
+
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 14px;
+        background: conic-gradient(
+          from 210deg,
+          #7df5c9,
+          #4fa3ff,
+          #f27aff,
+          #7df5c9
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: var(--shadow-soft);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        inset: 6px;
+        border-radius: 10px;
+        background: radial-gradient(
+          circle at 20% 20%,
+          #050611 0,
+          #111323 60%,
+          #050611 100%
+        );
+      }
+
+      .brand-mark span {
+        position: relative;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--accent);
+      }
+
+      .brand-text h1 {
+        margin: 0 0 2px;
+        font-size: 24px;
+      }
+
+      .brand-text p {
+        margin: 0;
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      button {
+        border-radius: 999px;
+        border: 1px solid transparent;
+        background: var(--accent);
+        color: #050611;
+        padding: 9px 18px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        box-shadow: 0 12px 40px rgba(125, 245, 201, 0.35);
+        transition: transform 0.08s ease-out, box-shadow 0.08s ease-out,
+          background 0.08s ease-out;
+      }
+
+      button.secondary {
+        background: transparent;
+        color: var(--muted);
+        border-color: var(--border);
+        box-shadow: none;
+      }
+
+      button:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 16px 48px rgba(125, 245, 201, 0.5);
+      }
+
+      button.secondary:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      main {
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr);
+        gap: 20px;
+      }
+
+      @media (max-width: 900px) {
+        main {
+          grid-template-columns: minmax(0, 1fr);
+        }
+      }
+
+      .panel {
+        background: radial-gradient(
+            circle at 0 0,
+            rgba(125, 245, 201, 0.06) 0,
+            transparent 60%
+          ),
+          radial-gradient(
+            circle at 100% 100%,
+            rgba(142, 130, 255, 0.08) 0,
+            transparent 60%
+          ),
+          var(--panel);
