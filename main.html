@@ -182,3 +182,187 @@
             transparent 60%
           ),
           var(--panel);
+        border-radius: var(--radius-lg);
+        border: 1px solid rgba(255, 255, 255, 0.03);
+        box-shadow: var(--shadow-soft);
+        padding: 18px 18px 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        border: 1px solid rgba(255, 255, 255, 0.02);
+        pointer-events: none;
+      }
+
+      .panel-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        gap: 12px;
+      }
+
+      .panel-title h2 {
+        margin: 0;
+        font-size: 15px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      .pill {
+        font-size: 11px;
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid rgba(125, 245, 201, 0.4);
+        background: rgba(2, 12, 16, 0.7);
+        color: var(--accent);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px 16px;
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .field.full {
+        grid-column: 1 / -1;
+      }
+
+      label {
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      input[type="text"],
+      input[type="number"],
+      textarea,
+      select {
+        border-radius: var(--radius-md);
+        border: 1px solid var(--border);
+        background: rgba(6, 8, 22, 0.96);
+        color: var(--text);
+        padding: 7px 10px;
+        font-size: 13px;
+        outline: none;
+        transition: border 0.08s ease-out, box-shadow 0.08s ease-out,
+          background 0.08s ease-out;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+        border-color: var(--accent);
+        background: rgba(12, 16, 38, 0.98);
+        box-shadow: 0 0 0 1px rgba(125, 245, 201, 0.25);
+      }
+
+      textarea {
+        min-height: 60px;
+        resize: vertical;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .tag {
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(9, 11, 28, 0.9);
+        color: var(--muted);
+        cursor: pointer;
+      }
+
+      .tag.selected {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--accent-soft);
+      }
+
+      .appliance-list {
+        margin-top: 8px;
+        border-radius: var(--radius-md);
+        border: 1px dashed var(--border);
+        padding: 8px;
+        max-height: 190px;
+        overflow-y: auto;
+        font-size: 12px;
+      }
+
+      .appliance-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 4px 0;
+        border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+      }
+
+      .appliance-item:last-child {
+        border-bottom: none;
+      }
+
+      .appliance-meta {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .appliance-remove {
+        border: none;
+        background: transparent;
+        color: var(--danger);
+        font-size: 11px;
+        cursor: pointer;
+        padding: 0 4px;
+      }
+
+      .split {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 10px;
+        font-size: 11px;
+        color: var(--muted);
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .results {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
+      }
+
+      .idea-card {
+        border-radius: var(--radius-md);
+        padding: 10px 10px 9px;
+        background: linear-gradient(
+          120deg,
+          rgba(125, 245, 201, 0.12),
+          rgba(125, 245, 201, 0.02)
+        );
+        border: 1px solid rgba(125, 245, 201, 0.35);
+        font-size: 13px;
+      }
+
+      .idea-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
